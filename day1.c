@@ -11,5 +11,6 @@ int main() {
     printf("The division of %d and %d is %d\n", a, b, division);
     printf("The float division of %d and %d is %.2f\n", a, b, division_float);
 
+    
     return 0;
 }
