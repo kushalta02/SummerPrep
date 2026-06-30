@@ -11,7 +11,7 @@ int main() {
     // Reverse the string
     for (i = strlen(str) - 1; i >= 0; i--)
         rev[j++] = str[i];
-    rev[j] = '\0';
-    printf("Reversed string: %s\n", rev);
+        rev[j] = '\0';
+        printf("Reversed string: %s\n", rev);
     return 0;
 }
