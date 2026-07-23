@@ -18,7 +18,7 @@ int main()
     cout<<"Array Elements:"<<endl;
     for(int i=0;i<n;i++)
     {
-        cout<<arr[i]<<" ";
+        cout<<arr[i]<<" "<<endl;
     }
     return 0;
 }
