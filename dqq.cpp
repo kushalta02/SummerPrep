@@ -43,7 +43,7 @@ public:
         cout<<val<<" inserted at Front."<<endl;
     }
 
-    // Insert at Rear
+    
     void insertRear()
     {
         int val;
@@ -70,7 +70,7 @@ public:
         cout<<val<<" inserted at Rear."<<endl;
     }
 
-    // Delete Front
+
     void deleteFront()
     {
         if(front==-1)
@@ -91,7 +91,7 @@ public:
         }
     }
 
-    // Delete Rear
+  
     void deleteRear()
     {
         if(front==-1)
@@ -147,7 +147,6 @@ int main()
     int ch;
     char choice='y';
 
-    // ---------------- Input Restricted ----------------
 
     if(type==1)
     {
@@ -192,8 +191,7 @@ int main()
         }while(choice=='y');
     }
 
-    // ---------------- Output Restricted ----------------
-
+    
     else if(type==2)
     {
         do
