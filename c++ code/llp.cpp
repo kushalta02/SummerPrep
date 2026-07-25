@@ -42,118 +42,122 @@ class linkedlist{
 					        break;
 					default: cout<<"Invalid Choice!!";
 					         break;
-					         
-				}
+                }		         
+				
 			}
 			while(choice2=='y');
-		}
-        void at_begin(){
-            node*start=NULL;
-            if(start==NULL){
-                cout<<"emty"<<endl;
-            int val;
-            cout<<"val"<<endl;
-            cin>>val;
-            node*ptr = new node(val);
-            ptr->next=start;
-            start=ptr;
-            cout<<val<<"inserted"<<endl;
             }
-        }
-        void at_end(){
-            int val;
-            cout<<"val"<<endl;
-            cin>>val;
-            node*temp=start;
-            node*ptr=new node(val);
-            if(start==NULL){
-                start=ptr;
-            }
-            else{
-                while(temp->next!=NULL)
+            void at_begin(){
+                node*start=NULL;
+                int val;
+                cout<<"val"<<endl;
+                cin>>val;
+                node*ptr = new node(val);
+                if(start==NULL)
                 {
+                    start=ptr;
+                }
+                else{
+                    ptr->next=start;
+                    start=ptr;
+                    cout<<"Node Inserted!!"<<endl;
+                }
+            }   
+            void at_end(){
+                int val;
+                cout<<"val"<<endl;
+                cin>>val;
+                node*temp=start;
+                node*ptr=new node(val);
+                if(start==NULL){
+                    start=ptr;
+                }
+                else{
+                    while(temp->next!=NULL)
+                    {
+                        temp=temp->next;
+                    }
+                    temp->next==ptr;
+                    cout<<"done"<<endl;
+                }
+
+            }
+            void display(){
+                node*temp=start;
+                if(start==NULL){
+                    cout<<" empty"<<endl;
+                    return;
+                }
+                while(temp!=NULL){
+                    cout<<temp->data<<"->";
+                    temp=temp->next;
+
+                }
+            }
+            void at_pos(){
+                int val;
+                cout<<"val"<<endl;
+                cin>>val;
+                int pos;
+                cout<<"enter position"<<endl;
+                cin>>pos;
+                node*temp=start;
+                node*ptr=new node(val);
+                if(pos==1){
+                    ptr->next=start;
+                    start=ptr;
+                    cout<<val<<"inserted"<<endl;
+                }
+                for(int i=1;i<pos-1 && temp!=NULL;i++){
                     temp=temp->next;
                 }
-                temp->next==ptr;
-                cout<<"done"<<endl;
+                if(temp==NULL){
+                    cout<<"enter valid "<<endl;
+                }
+                ptr->next=temp->next;
+                temp->next=ptr;
+                
+            }
+            void deletion(){
+                int ch;
+                char choice3='y';
+                do
+                {
+                    cout<<"\n1. Delete at Begin."<<endl;
+                    cout<<"\n2. Delete at End."<<endl;
+                    cout<<"\n3. Delete at Position."<<endl;
+                    cout<<"\n4. Exit."<<endl;
+                    cout<<"Enter your choice.";
+                    cin>>ch;
+                    switch(ch)
+                    {
+                        case 1: del_begin();
+                                break;
+                        case 2: del_end();
+                                break;
+                        case 3: del_pos();
+                                break;
+                        case 4: choice3='n';
+                                break;
+                        default: cout<<"Invalid Choice!!"<<endl;
+                                break;
+                    
+                    }
+                    
+                }
+                while(choice3=='y');
+            }
+            void del_begin(){
+
+            }
+            void del_end(){
+
+            }
+            void del_pos(){
+
             }
 
-        }
-        void display(){
-            node*temp=start;
-            if(start==NULL){
-                cout<<" empty";
-            }
-            while(temp!=NULL){
-                cout<<temp->data<<"->";
-                temp=temp->next;
-
-            }
-        }
-        void at_pos(){
-            int val;
-            cout<<"val"<<endl;
-            cin>>val;
-            int pos;
-            cout<<"enter position"<<endl;
-            cin>>pos;
-            node*temp=start;
-            node*ptr=new node(val);
-            if(pos==1){
-                ptr->next=start;
-                start=ptr;
-                cout<<val<<"inserted"<<endl;
-            }
-            for(int i=1;i<pos-1 && temp!=NULL;i++){
-                temp=temp->next;
-            }
-            if(temp==NULL){
-                cout<<"enter valid "<<endl;
-            }
-            ptr->next=temp->next;
-            temp->next=ptr;
-            
-        }
-        void deletion(){
-            int ch;
-            char choice3='y';
-            do
-			{
-				cout<<"\n1. Delete at Begin."<<endl;
-				cout<<"\n2. Delete at End."<<endl;
-			    cout<<"\n3. Delete at Position."<<endl;
-				cout<<"\n4. Exit."<<endl;
-				cout<<"Enter your choice.";
-				cin>>ch;
-				switch(ch)
-				{
-					case 1: del_begin();
-					        break;
-					case 2: del_end();
-					        break;
-					case 3: del_pos();
-							break;
-					case 4: choice3='n';
-					        break;
-					default: cout<<"Invalid Choice!!"<<endl;
-					         break;
-				
-				}
-				
-			}
-			while(choice3=='y');
-		}
-        void del_begin(){
-
-        }
-        void del_end(){
-
-        }
-        void del_pos(){
-
-        }
-
-    };
+};
 int main()
 {
 	linkedlist l1;
