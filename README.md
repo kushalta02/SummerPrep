@@ -1,1 +1,1 @@
-A trining journey
+A collection of c practice codes
